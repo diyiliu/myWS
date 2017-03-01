@@ -2,8 +2,6 @@ import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 import org.junit.Test;
 
-import javax.xml.namespace.QName;
-
 /**
  * Description: WSClientTest
  * Author: DIYILIU
