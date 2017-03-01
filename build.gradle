@@ -1,0 +1,48 @@
+group 'com.diyiliu'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+compileTestJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+ext{
+    springVersion = '4.2.5.RELEASE'
+    cxfVersion = '3.1.6'
+    junitVersion = '4.12'
+}
+
+dependencies {
+
+    compile(
+            //spring
+            "org.springframework:spring-core:$springVersion",
+            "org.springframework:spring-context:$springVersion",
+            //cxf
+            "org.apache.cxf:cxf-rt-frontend-jaxws:$cxfVersion",
+            "org.apache.cxf:cxf-rt-transports-http:$cxfVersion",
+            "org.apache.cxf:cxf-rt-transports-http-jetty:$cxfVersion"
+    )
+
+    testCompile(
+            "junit:junit:$junitVersion",
+            "org.springframework:spring-test:$springVersion"
+    )
+
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
